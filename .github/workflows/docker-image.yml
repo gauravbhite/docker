@@ -15,6 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag gbhite/demo:1.0
-      run: docker login -u gbhite -p ${{secret.DOCKERPASS}}
+      run: | 
+          docker build . --file Dockerfile --tag gbhite/demo:1.0
+          docker login -u gbhite -p ${{secret.DOCKERPASS}}
       
